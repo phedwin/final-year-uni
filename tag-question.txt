@@ -1,0 +1,51 @@
+
+due before 21, Feb
+
+Problem 1: Build a Simple File-Tagging System
+You need to design a file-tagging system that allows users to tag files with multiple tags,
+search for files by tags, and perform basic CRUD (Create, Read, Update, Delete) operations on the tags.
+
+
+Requirements:
+1. Tagging system: Each file can have multiple tags. Each tag is a string (e.g., "important", "draft", "project_x").
+
+2. File metadata: Each file should store the tags it has. For simplicity,
+   you can assume the file is a local text file (you don't need to handle large binary files).
+
+3. CRUD operations for tags:
+    *Create a new file and assign tags to it.
+    *Add new tags to existing files.
+    *Remove tags from existing files.
+    *List all tags for a given file.
+    *Search for files by a tag.
+    *Update tags for a file (e.g., rename or replace a tag).
+
+4. Storage format: Use a text-based format for storing file information 
+    (you can use JSON, TOML, or a simple custom format). Ensure the storage format is easy to extend, for example, if you later want to add more metadata to files.
+
+Constraints:
+* Keep the system efficient in terms of memory (you don't need to store every file's tag in memory at once, but store and retrieve them efficiently).
+* Ensure that the code is modular, reusable, and maintainable. Think about how different components (e.g., file handling, memory management, and tag manipulation) interact.
+* Consider error handling and edge cases, such as attempting to remove a tag that doesn't exist or adding a tag to a non-existent file.
+* Use data structures that allow for efficient searching, adding, and deleting of tags
+
+
+Bonus points:
+- User Interface: You can create a simple CLI (command-line interface) for interacting with your system 
+    (e.g., using flags for commands like create, add-tag, remove-tag, search-tag).
+
+- File-based Persistence: Ensure the system saves and loads its data from a file, so the tags persist between runs.
+
+Evaluation Criteria (out of 100):
+
+1. Design and Structure (30): 
+    * How well the code is organized and how modular the components are.
+2. Memory Efficiency (20):
+    * How efficiently the system manages memory and handles large amounts of data.
+3. Error Handling (20): 
+    * Proper handling of edge cases and errors (e.g., missing files, invalid tags).
+4. Creativity and Simplicity (15):
+    * How creatively you approach the problem, while keeping the design simple and effective.
+5. Scalability (15): 
+    * How easily the system can be extended in the future, for example;
+    - adding new features like priority tags, due dates, or user permissions.

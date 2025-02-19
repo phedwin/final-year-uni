@@ -12,6 +12,16 @@
 #define _XOPEN_SOURCE 700
 #endif
 
+/*symbols*/
+#define FUNCTION(x)                \
+	.globl EXT_C(x);           \
+	.type EXT_C(x), @function; \
+	EXT_C(x) :
+#define VARIABLE(x)              \
+	.globl EXT_C(x);         \
+	.type EXT_C(x), @object; \
+	EXT_C(x) :
+
 #include <sys/termios.h> /* for winsize */
 #include <sys/types.h>   /* some systems still require this */
 #if defined(MACOS) || !defined(TIOCGWINSZ)

@@ -59,6 +59,7 @@ typedef void Sigfunc(int); /* for signal handlers */
 #define DEBUG 1
 
 #include <assert.h> /*EGDE CASES*/
+#include <errno.h>
 #include <string.h> /* STRING OPERATIONS*/
 #include <sys/stat.h>
 
@@ -85,6 +86,13 @@ static int TAG_USAGE(const char *progname, FILE *usage_stream_buffer) {
 	    progname, VERSION, progname, progname, progname, progname);
 	return EXIT_FAILURE;
 }
+
+#define COMMON_TAG_LIST_ROUTINE_H(LIST, tag) \
+	do {                                 \
+		while (list) {               \
+			list = list->next;   \
+		}                            \
+	} while (0);
 
 #ifdef TAGS
 // General Use Tags:

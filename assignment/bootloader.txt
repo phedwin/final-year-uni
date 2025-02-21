@@ -1,0 +1,28 @@
+Due, March, 13th.
+problem 2: Building a bootloader
+
+*- build a complete bootloader that goes from power-on to loading a custom kernel.
+
+> Project Scope: Complete Bootloader
+    * Stage 1: MBR Bootloader
+    Write a 512-byte MBR in assembly to boot from disk.
+    
+    - Print "Booting..." using BIOS interrupts.
+    - Read the next 512 bytes into memory at 0x1000 and jump.
+    - Display an error message if Stage 2 fails.
+    - Display CPU mode and detected memory size.
+
+    * Stage 2: Second-Stage Bootloader
+    - Switch from Real Mode to 32-bit Protected Mode.
+    - Set up the Global Descriptor Table (GDT).
+    - Read multiple disk sectors into memory.
+    - Load an ELF or flat binary kernel to 0x100000 and jump.
+    - Implement a simple shell-like interface for user input.
+
+<optional bonus points>
+    * Kernel Entry
+
+    - Enable Long Mode (64-bit).
+    - Write a tiny kernel in C or assembly.
+    - Print text without BIOS using VGA or VESA.
+    - Parse the memory map using BIOS E820 calls.

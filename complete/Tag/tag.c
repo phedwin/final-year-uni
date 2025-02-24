@@ -83,6 +83,7 @@ void syncTagsToFile(char *path, size_t tags_t, char *buffer, char **tags) {
  * tags, the idea was, i dont get to write different routines for the same
  * functionality, this routine responds to flag -s*/
 
+/*TODO, rewrite.*/
 void *genericSearch(char **buf /*keep results of tags, or files sharing tags*/,
 		    char *filename /*keep this 0*/,
 		    char **tags /*or this*/,
